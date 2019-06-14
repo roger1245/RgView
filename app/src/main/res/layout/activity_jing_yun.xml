@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".jingYunEffect.JingYunActivity">
+    <RelativeLayout
+        android:id="@+id/front_image_view_relative"
+        android:layout_width="match_parent"
+        android:layout_marginTop="42dp"
+        android:layout_height="400dp">
+        <ImageView
+            android:id="@+id/front_image_view"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_centerInParent="true"
+
+            android:scaleType="fitCenter" />
+        <com.rg.rgview.jingYunEffect.DiffuseView
+            android:id="@+id/front_diffuseview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
