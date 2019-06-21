@@ -15,4 +15,13 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"/>
 
+    <Button
+        android:id="@+id/spring_action_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="果冻特效"
+        android:layout_below="@id/jingyun_effect"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
