@@ -99,8 +99,6 @@ public class ActionButtonItems extends View {
             mBitmap = getSpecifiedDimen(mBitmap, circleRadius * 2, circleRadius * 2);
         }
 
-        Log.d(TAG, "the iconId is " + iconId);
-        Log.d(TAG, "bitmap is" + mBitmap.toString());
         invalidate();
     }
 
