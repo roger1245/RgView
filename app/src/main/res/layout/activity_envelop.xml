@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnvelopEffect.EnvelopActivity">
+
+    <com.rg.rgview.EnvelopEffect.EnvelopViewGroup
+        android:id="@+id/envelop_effect2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:alpha="0"
+            android:src="@drawable/envelop_word"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/envelop_before_background" />
+
+        <ImageView
+            android:id="@+id/envelop_iv"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/envelop_connect" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_up" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_up" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_down" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_down" />
+
+
+
+
+
+
+
+
+
+
+    </com.rg.rgview.EnvelopEffect.EnvelopViewGroup>
+
+
+</android.support.constraint.ConstraintLayout>

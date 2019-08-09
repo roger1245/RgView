@@ -23,5 +23,13 @@
         android:layout_below="@id/jingyun_effect"
         android:layout_margin="20dp"
         android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/envelop_effect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="信封展开特效"
+        android:layout_below="@id/spring_action_menu"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

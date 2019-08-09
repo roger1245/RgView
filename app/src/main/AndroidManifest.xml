@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SpringActionMenu.SpringActivity"></activity>
+        <activity android:name=".EnvelopEffect.EnvelopActivity"></activity>
+        <activity android:name=".SpringActionMenu.SpringActivity" />
         <activity android:name=".jingYunEffect.JingYunActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
