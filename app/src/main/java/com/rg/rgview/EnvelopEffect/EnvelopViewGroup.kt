@@ -16,7 +16,7 @@ class EnvelopViewGroup : ViewGroup {
     private val radiusWidth = dp2px(70)
     private val radiusHeight = dp2px(25)
 
-    private val duration: Long = 3000
+    private val duration: Long = 2500
 
     constructor(ctx: Context): this(ctx, null) {
 
@@ -93,6 +93,7 @@ class EnvelopViewGroup : ViewGroup {
 
         measureChildren(widthMeasureSpec, heightMeasureSpec)
 
+
         setMeasuredDimension(sizeWidth, sizeHeight)
 
     }
@@ -120,6 +121,8 @@ class EnvelopViewGroup : ViewGroup {
                     val ratioY = height / cHeight.toDouble()
                     childView.animate().scaleX(ratioX.toFloat()).scaleY(ratioY.toFloat()).setDuration(duration).start()
                     childView.animate().alpha(0F).setDuration(500).start()
+
+
                 }
 
                 2 -> {

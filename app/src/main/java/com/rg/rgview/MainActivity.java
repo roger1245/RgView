@@ -8,12 +8,14 @@ import android.widget.Button;
 
 import com.rg.rgview.EnvelopEffect.EnvelopActivity;
 import com.rg.rgview.SpringActionMenu.SpringActivity;
+import com.rg.rgview.bubbleEffect.BubbleActivity;
 import com.rg.rgview.jingYunEffect.JingYunActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button jingyunEffect;
     private Button springActionMenu;
     private Button envelopButton;
+    private Button bubbleEffect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         envelopButton = findViewById(R.id.envelop_effect);
         envelopButton.setOnClickListener(this);
-
+        bubbleEffect = findViewById(R.id.bubble_effect);
+        bubbleEffect.setOnClickListener(this);
     }
 
     @Override
@@ -48,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.envelop_effect:
                 Intent intent2 = new Intent(MainActivity.this, EnvelopActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.bubble_effect:
+                Intent intent3 = new Intent(MainActivity.this, BubbleActivity.class);
+                startActivity(intent3);
                 break;
             default:
                 break;
