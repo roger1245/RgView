@@ -1,4 +1,4 @@
-package com.rg.rgview.bubbleEffect
+package com.rg.rgview.selfView.bubbleEffect
 
 import android.content.Context
 import android.graphics.*

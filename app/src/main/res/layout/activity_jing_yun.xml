@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".jingYunEffect.JingYunActivity">
+    tools:context=".selfView.jingYunEffect.JingYunActivity">
     <RelativeLayout
         android:id="@+id/front_image_view_relative"
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_centerInParent="true"
 
             android:scaleType="fitCenter" />
-        <com.rg.rgview.jingYunEffect.DiffuseView
+        <com.rg.rgview.selfView.jingYunEffect.DiffuseView
             android:id="@+id/front_diffuseview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

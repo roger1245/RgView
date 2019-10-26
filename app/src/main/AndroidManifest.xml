@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bubbleEffect.BubbleActivity"></activity>
-        <activity android:name=".EnvelopEffect.EnvelopActivity" />
-        <activity android:name=".SpringActionMenu.SpringActivity" />
-        <activity android:name=".jingYunEffect.JingYunActivity" />
+        <activity android:name=".selfView.SelfViewActivity"></activity>
+        <activity android:name=".transitionManagerAnimation.AnimationActivity" />
+        <activity android:name=".selfView.bubbleEffect.BubbleActivity" />
+        <activity android:name=".selfView.envelopEffect.EnvelopActivity" />
+        <activity android:name=".selfView.springActionMenu.SpringActivity" />
+        <activity android:name=".selfView.jingYunEffect.JingYunActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

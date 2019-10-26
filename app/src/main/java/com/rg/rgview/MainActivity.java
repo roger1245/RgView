@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.rg.rgview.EnvelopEffect.EnvelopActivity;
-import com.rg.rgview.SpringActionMenu.SpringActivity;
-import com.rg.rgview.bubbleEffect.BubbleActivity;
-import com.rg.rgview.jingYunEffect.JingYunActivity;
+import com.rg.rgview.selfView.envelopEffect.EnvelopActivity;
+import com.rg.rgview.selfView.springActionMenu.SpringActivity;
+import com.rg.rgview.selfView.bubbleEffect.BubbleActivity;
+import com.rg.rgview.selfView.jingYunEffect.JingYunActivity;
+import com.rg.rgview.transitionManagerAnimation.AnimationActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button jingyunEffect;
@@ -40,24 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.jingyun_effect:
-                Intent intent = new Intent(MainActivity.this, JingYunActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.spring_action_menu:
-                Intent intent1 = new Intent(MainActivity.this, SpringActivity.class);
-                startActivity(intent1);
-                break;
-            case R.id.envelop_effect:
-                Intent intent2 = new Intent(MainActivity.this, EnvelopActivity.class);
-                startActivity(intent2);
-                break;
-            case R.id.bubble_effect:
-                Intent intent3 = new Intent(MainActivity.this, BubbleActivity.class);
-                startActivity(intent3);
-                break;
-            default:
-                break;
+
         }
     }
 }

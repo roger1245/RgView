@@ -1,6 +1,5 @@
-package com.rg.rgview.bubbleEffect
+package com.rg.rgview.selfView.bubbleEffect
 
-import android.util.Log
 import kotlin.math.cos
 import kotlin.math.sin
 

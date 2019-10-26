@@ -1,8 +1,7 @@
-package com.rg.rgview.EnvelopEffect
+package com.rg.rgview.selfView.envelopEffect
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 
 import com.rg.rgview.R
 
