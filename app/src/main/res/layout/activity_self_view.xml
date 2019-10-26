@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="53dp"
+        android:onClick="onClick"
+
         android:text="鲸云特效"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="56dp"
+        android:onClick="onClick"
+
         android:text="果冻特效"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="68dp"
+        android:onClick="onClick"
+
         android:text="信封展开特效"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="95dp"
+        android:onClick="onClick"
+
         android:text="气泡"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -5,18 +5,21 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.rg.rgview.R
+import com.rg.rgview.selfView.springActionMenu.SpringActivity
 import com.rg.rgview.selfView.bubbleEffect.BubbleActivity
 import com.rg.rgview.selfView.envelopEffect.EnvelopActivity
-import kotlinx.android.synthetic.main.activity_self_view.*
+import com.rg.rgview.selfView.jingYunEffect.JingYunActivity
 
 class SelfViewActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.jingyun_effect -> {
-
+                val intent = Intent(this@SelfViewActivity, JingYunActivity::class.java)
+                startActivity(intent)
             }
             R.id.spring_action_menu -> {
-                val intent = Intent(this@SelfViewActivity, Spring)
+                val intent = Intent(this@SelfViewActivity, SpringActivity::class.java)
+                startActivity(intent)
             }
             R.id.envelop_effect -> {
                 val intent = Intent(this@SelfViewActivity, EnvelopActivity::class.java)
