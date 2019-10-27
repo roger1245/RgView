@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="this is a TextView"/>
+
+    <ImageView
+        android:id="@+id/iv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_mood_exciting" />
+
+    <ImageView
+        android:id="@+id/iv_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_mood_happy"
+        android:layout_below="@id/iv_1"/>
+    <TextView
+        android:text="this is second textview"
+        android:layout_below="@id/tv_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/iv_cheese"
+        android:src="@drawable/transition_cheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/iv_cheese_2"
+        android:layout_below="@id/iv_cheese"
+        android:scaleType="fitCenter"
+        android:src="@drawable/transition_cheese_2"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
+
+</RelativeLayout>
