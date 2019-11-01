@@ -28,7 +28,7 @@ class JingYunActivity : AppCompatActivity() {
 
     private fun init() {
         roundImage = findViewById(R.id.front_image_view)
-        Glide.with(this).load("http://p2.music.126.net/udVa4wtLgMA_XWnWPq3jxg==/703687441788470.jpg").into(roundImage!!)
+        Glide.with(this).load("https://raw.githubusercontent.com/roger1245/ImgBed/master/img/rgview_2.jpg").into(roundImage!!)
 
         //图片裁剪和旋转
         if (Build.VERSION.SDK_INT >= 21) {
