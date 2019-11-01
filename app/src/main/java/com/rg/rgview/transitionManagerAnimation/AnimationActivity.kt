@@ -2,9 +2,9 @@ package com.rg.rgview.transitionManagerAnimation
 
 import android.app.ActivityOptions
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.ActivityOptionsCompat
+import androidx.core.app.ActivityOptionsCompat
 import android.transition.Explode
 import android.transition.TransitionInflater
 import android.view.View

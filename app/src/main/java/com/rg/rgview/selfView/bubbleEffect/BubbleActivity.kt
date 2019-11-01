@@ -1,6 +1,6 @@
 package com.rg.rgview.selfView.bubbleEffect
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.rg.rgview.R
 import org.jetbrains.anko.find

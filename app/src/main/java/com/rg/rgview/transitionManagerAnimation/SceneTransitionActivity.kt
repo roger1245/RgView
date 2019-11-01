@@ -1,6 +1,6 @@
 package com.rg.rgview.transitionManagerAnimation
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.ChangeBounds
 import android.transition.Scene
