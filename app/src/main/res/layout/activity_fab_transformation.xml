@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,7 +10,7 @@
         android:layout_height="match_parent"
         android:background="@color/dark_scrim"
         android:visibility="invisible"
-        app:layout_behavior="@string/fab_transformation_scrim_behavior"/>
+        app:layout_behavior="@string/fab_transformation_scrim_behavior" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -20,32 +19,35 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
-        android:elevation="3dp"/>
-
-
+        app:elevation="50dp"
+        android:elevation="3dp" />
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:id="@+id/sheet"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
+        android:elevation="5dp"
         android:visibility="invisible"
-        android:elevation="500dp"
-        app:layout_behavior="@string/fab_transformation_sheet_behavior" >
+        app:layout_behavior="@string/fab_transformation_sheet_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
             <include
                 android:id="@+id/cheese_1"
                 layout="@layout/recycle_item_cheese" />
+
             <include
                 android:id="@+id/cheese_2"
                 layout="@layout/recycle_item_cheese" />
+
             <include
                 android:id="@+id/cheese_3"
                 layout="@layout/recycle_item_cheese" />
+
             <include
                 android:id="@+id/cheese_4"
                 layout="@layout/recycle_item_cheese" />
@@ -53,7 +55,6 @@
         </LinearLayout>
 
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
