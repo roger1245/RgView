@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FabTransformationActivity"></activity>
+        <activity android:name=".reoder.ReorderActivity"></activity>
+        <activity android:name=".FabTransformationActivity" />
         <activity android:name=".transitionManagerAnimation.SharedElementActivity" />
         <activity android:name=".transitionManagerAnimation.DelayedTransitionActivity" />
         <activity android:name=".selfView.SelfViewActivity" />

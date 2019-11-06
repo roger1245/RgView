@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import com.rg.rgview.reoder.ReorderActivity
 import com.rg.rgview.selfView.SelfViewActivity
 import com.rg.rgview.transitionManagerAnimation.AnimationActivity
 
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.fab_transformation -> {
                 val intent = Intent(this@MainActivity, FabTransformationActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.reorder -> {
+                val intent = Intent(this@MainActivity, ReorderActivity::class.java)
                 startActivity(intent)
             }
         }
