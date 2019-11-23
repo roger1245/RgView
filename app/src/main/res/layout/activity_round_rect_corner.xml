@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_primary_dark"
+    tools:context=".roundRectCornerView.RoundRectCornerActivity">
+
+    <com.rg.rgview.roundRectCornerView.RoundRectCornerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:leftTopCornerRadius="50dp"
+        app:rightTopCornerRadius="50dp"
+        app:leftBottomCornerRadius="25dp"
+        app:rightBottomCornerRadius="25dp" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/colorAccent"/>
+    </com.rg.rgview.roundRectCornerView.RoundRectCornerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

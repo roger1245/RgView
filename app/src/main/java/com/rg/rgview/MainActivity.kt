@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import com.rg.rgview.reoder.ReorderActivity
+import com.rg.rgview.roundRectCornerView.RoundRectCornerActivity
 import com.rg.rgview.selfView.SelfViewActivity
 import com.rg.rgview.transitionManagerAnimation.AnimationActivity
 
@@ -34,6 +35,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.reorder -> {
                 val intent = Intent(this@MainActivity, ReorderActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.round_rect_corner -> {
+                val intent = Intent(this@MainActivity, RoundRectCornerActivity::class.java)
                 startActivity(intent)
             }
         }
