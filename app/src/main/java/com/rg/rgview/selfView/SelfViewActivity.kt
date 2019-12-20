@@ -1,14 +1,15 @@
 package com.rg.rgview.selfView
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.rg.rgview.R
-import com.rg.rgview.selfView.springActionMenu.SpringActivity
+import com.rg.rgview.selfView.bezierCircle.BezierCircleActivity
 import com.rg.rgview.selfView.bubbleEffect.BubbleActivity
 import com.rg.rgview.selfView.envelopEffect.EnvelopActivity
 import com.rg.rgview.selfView.jingYunEffect.JingYunActivity
+import com.rg.rgview.selfView.springActionMenu.SpringActivity
 
 class SelfViewActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
@@ -27,6 +28,10 @@ class SelfViewActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.bubble_effect -> {
                 val intent = Intent(this@SelfViewActivity, BubbleActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.btn_bezier_circle -> {
+                val intent = Intent(this@SelfViewActivity, BezierCircleActivity::class.java)
                 startActivity(intent)
             }
         }

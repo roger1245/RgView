@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/mine_sign_cl"
     android:background="@color/design_default_color_primary_dark"
-    tools:context=".roundRectCornerView.RoundRectCornerActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <com.rg.rgview.roundRectCornerView.RoundRectCornerView
+    <FrameLayout
+        android:id="@+id/mine_sign_fl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:leftTopCornerRadius="50dp"
-        app:rightTopCornerRadius="50dp"
-        app:leftBottomCornerRadius="25dp"
-        app:rightBottomCornerRadius="25dp" >
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="95dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <include layout="@layout/mine_layout_store_sign" />
+    </FrameLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@color/colorAccent"/>
-    </com.rg.rgview.roundRectCornerView.RoundRectCornerView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
