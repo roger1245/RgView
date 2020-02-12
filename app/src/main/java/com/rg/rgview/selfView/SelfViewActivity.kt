@@ -8,6 +8,7 @@ import com.rg.rgview.R
 import com.rg.rgview.selfView.bezierCircle.BezierCircleActivity
 import com.rg.rgview.selfView.bubbleEffect.BubbleActivity
 import com.rg.rgview.selfView.envelopEffect.EnvelopActivity
+import com.rg.rgview.selfView.gpa.GPAGraphActivity
 import com.rg.rgview.selfView.jingYunEffect.JingYunActivity
 import com.rg.rgview.selfView.springActionMenu.SpringActivity
 
@@ -32,6 +33,10 @@ class SelfViewActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_bezier_circle -> {
                 val intent = Intent(this@SelfViewActivity, BezierCircleActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.btn_gpa -> {
+                val intent = Intent(this@SelfViewActivity, GPAGraphActivity::class.java)
                 startActivity(intent)
             }
         }
