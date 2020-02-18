@@ -1,8 +1,10 @@
 package com.rg.rgview.selfView.gpa
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import com.rg.rgview.widget.dp2px
 import org.jetbrains.anko.backgroundColor
@@ -24,10 +26,10 @@ class GPAgraph : View {
     private lateinit var gpaPaint: Paint
     private val mWidth: Int = dp2px(100)
     private val mHeight: Int = dp2px(100)
-    private val array = arrayListOf(3.5F, 2.4F, 1.5F, 2.6F, 3.3F, 3.2F, 1.1F, 0.9F)
     private lateinit var path: Path
     private lateinit var pathBlue: Path
     private val bottomWidth = dp2px(50)
+    private val topWidth = dp2px(25)
     private var segHeight: Int = 0
     private var segWidth: Int = 0
     private lateinit var dashPaint: Paint
@@ -35,6 +37,9 @@ class GPAgraph : View {
     private lateinit var textPaint: Paint
     private lateinit var gradientPaint: Paint
     private lateinit var linearGradient: LinearGradient
+    var touchPoint: Int? = null
+    var array = arrayListOf<Float>()
+    private lateinit var whitePaint: Paint
 
     private fun init() {
         backgroundColor = Color.WHITE
@@ -42,7 +47,7 @@ class GPAgraph : View {
         gpaPaint = Paint()
         gpaPaint.color = Color.parseColor("#2921D1")
         gpaPaint.style = Paint.Style.STROKE
-        gpaPaint.strokeWidth = dp2px(3).toFloat()
+        gpaPaint.strokeWidth = dp2px(4).toFloat()
 
         path = Path()
         pathBlue = Path()
@@ -51,15 +56,19 @@ class GPAgraph : View {
         dashPaint.color = Color.parseColor("#2915315B")
         dashPaint.style = Paint.Style.STROKE
         dashPaint.strokeWidth = dp2px(1).toFloat()
-        dashPaint.pathEffect = DashPathEffect(floatArrayOf(dp2px(3).toFloat(), dp2px(2).toFloat()), 0F)
+        dashPaint.pathEffect = DashPathEffect(floatArrayOf(dp2px(5).toFloat(), dp2px(3).toFloat()), 0F)
 
         textPaint = Paint()
         textPaint.color = Color.parseColor("#A415315B")
-        textPaint.textSize = dp2px(10).toFloat()
+        textPaint.textSize = dp2px(9).toFloat()
         textPaint.textAlign = Paint.Align.CENTER
 
         gradientPaint = Paint()
         gradientPaint.style = Paint.Style.FILL
+
+        whitePaint = Paint()
+        whitePaint.color = Color.parseColor("#FFFFFFFF")
+        whitePaint.style = Paint.Style.FILL
 
     }
 
@@ -78,7 +87,9 @@ class GPAgraph : View {
 
         drawDashLine(canvas)
         drawText(canvas)
-        drawGPAPath(canvas)
+        if (!array.isNullOrEmpty()) {
+            drawGPAPath(canvas)
+        }
 
         canvas.restore()
     }
@@ -101,10 +112,20 @@ class GPAgraph : View {
         //画点
         gpaPaint.style = Paint.Style.FILL
         for (item in array.withIndex()) {
-            canvas.drawCircle((item.index + 1) * segWidth.toFloat(), -1 * item.value * segHeight.toFloat(), dp2px(4).toFloat(), gpaPaint)
+            canvas.drawCircle((item.index + 1) * segWidth.toFloat(), -1 * item.value * segHeight.toFloat(), dp2px(5).toFloat(), gpaPaint)
         }
         gpaPaint.style = Paint.Style.STROKE
         canvas.drawPath(pathBlue, gpaPaint)
+
+        //如果有touch 的点的话，画touch的点
+        touchPoint?.let {
+            if (array.size >= it + 1) {
+                //先画外面的蓝色
+                gpaPaint.style = Paint.Style.FILL
+                canvas.drawCircle((it + 1) * segWidth.toFloat(), -1 * array[it] * segHeight.toFloat(), dp2px(8).toFloat(), gpaPaint)
+                canvas.drawCircle((it + 1) * segWidth.toFloat(), -1 * array[it] * segHeight.toFloat(), dp2px(4).toFloat(), whitePaint)
+            }
+        }
 
     }
 
@@ -117,16 +138,50 @@ class GPAgraph : View {
 
     private fun drawText(canvas: Canvas) {
 
+        textPaint.textSize = dp2px(9).toFloat()
         for (item in textArray.withIndex()) {
             canvas.drawText(textArray[item.index], (item.index + 1) * segWidth.toFloat(), bottomWidth / 2F, textPaint)
+        }
+
+
+        touchPoint?.let {
+            if (array.size >= it + 1) {
+                textPaint.textSize = dp2px(14).toFloat()
+                canvas.drawText(array[it].toString(), (it + 1) * segWidth.toFloat(), -1 * array[it] * segHeight.toFloat() - dp2px(13), textPaint)
+            }
         }
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-        segHeight = (h - bottomWidth) / 4
+        segHeight = (h - bottomWidth - topWidth) / 4
         segWidth = w / 9
 
-        linearGradient = LinearGradient(0F, 0F, 0F, -1F * h, Color.parseColor("#FFFFFFFF"), Color.parseColor("#33A19EFF"), Shader.TileMode.REPEAT)
+        linearGradient = LinearGradient(0F, 0F, 0F, -1F * h, Color.parseColor("#66FFFFFF"), Color.parseColor("#44A19EFF"), Shader.TileMode.REPEAT)
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+
+        val event = event ?: return true
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                touchPoint = (event.x / segWidth - 0.5).toInt()
+                postInvalidate()
+                return true
+            }
+            MotionEvent.ACTION_MOVE -> {
+                touchPoint = (event.x / segWidth - 0.5).toInt()
+                postInvalidate()
+                return true
+            }
+            MotionEvent.ACTION_UP -> {
+                touchPoint = (event.x / segWidth - 0.5).toInt()
+                postInvalidate()
+                return true
+            }
+        }
+        return true
+
     }
 }
