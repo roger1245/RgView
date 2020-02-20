@@ -8,6 +8,7 @@
     tools:context=".selfView.gpa.GPAGraphActivity">
 
     <com.rg.rgview.selfView.gpa.GPAgraph
+        android:id="@+id/gpa_graph"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:layout_constraintTop_toTopOf="parent" />

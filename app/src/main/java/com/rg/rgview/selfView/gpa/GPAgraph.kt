@@ -6,8 +6,10 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.rg.rgview.widget.dp2px
 import org.jetbrains.anko.backgroundColor
+import kotlin.math.abs
 
 /**
  * Created by roger on 2020/2/11
@@ -160,6 +162,7 @@ class GPAgraph : View {
         linearGradient = LinearGradient(0F, 0F, 0F, -1F * h, Color.parseColor("#66FFFFFF"), Color.parseColor("#44A19EFF"), Shader.TileMode.REPEAT)
     }
 
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
 
@@ -182,6 +185,52 @@ class GPAgraph : View {
             }
         }
         return true
+    }
 
+    /**
+     * 以下是配合BottomSheet的事件分发部分
+     */
+    private var coordinator: CoordinatorLayout? = null
+    fun bindCoordinator(view: CoordinatorLayout) {
+        coordinator = view
+    }
+
+    private var childNeed = false
+    private var mLastX: Float? = null
+    private var mLastY: Float? = null
+
+    override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
+        val coordinatorLayout = coordinator ?: return super.dispatchTouchEvent(event)
+        val event = event ?: return super.dispatchTouchEvent(event)
+
+        val x = event.x
+        val y = event.y
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+            }
+            MotionEvent.ACTION_MOVE -> {
+                mLastX?.let { lastX ->
+                    mLastY?.let { lastY ->
+                        val deltaX = x - lastX
+                        val deltaY = y - lastY
+                        if (abs(deltaY) - abs(deltaX) > 0.000001F && !childNeed) {
+                            coordinatorLayout.requestDisallowInterceptTouchEvent(false)
+                        } else if (abs(deltaY) - abs(deltaX) <= 0.000001F) {
+                            coordinatorLayout.requestDisallowInterceptTouchEvent(true)
+                            childNeed = true
+                        }
+                    }
+                }
+            }
+            MotionEvent.ACTION_UP -> {
+                childNeed = false
+            }
+            MotionEvent.ACTION_CANCEL -> {
+                childNeed = false
+            }
+        }
+        mLastX = x
+        mLastY = y
+        return super.dispatchTouchEvent(event)
     }
 }
