@@ -1,4 +1,4 @@
-package com.rg.rgview
+package com.rg.rgview.widget
 
 import android.util.Log
 

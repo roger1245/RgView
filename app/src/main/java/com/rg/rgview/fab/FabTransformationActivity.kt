@@ -1,7 +1,8 @@
-package com.rg.rgview
+package com.rg.rgview.fab
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.rg.rgview.R
 import kotlinx.android.synthetic.main.activity_fab_transformation.*
 
 class FabTransformationActivity : AppCompatActivity() {

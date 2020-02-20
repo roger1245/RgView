@@ -16,7 +16,7 @@
         <activity android:name=".selfView.bezierCircle.BezierCircleActivity" />
         <activity android:name=".roundRectCornerView.RoundRectCornerActivity" />
         <activity android:name=".reoder.ReorderActivity" />
-        <activity android:name=".FabTransformationActivity" />
+        <activity android:name=".fab.FabTransformationActivity" />
         <activity android:name=".transitionManagerAnimation.SharedElementActivity" />
         <activity android:name=".transitionManagerAnimation.DelayedTransitionActivity" />
         <activity android:name=".selfView.SelfViewActivity" />
