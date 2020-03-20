@@ -190,7 +190,7 @@ class GpAGraph : View {
         touchPoint?.let {
             if (mappingData.size >= it + 1) {
                 textPaint.textSize = dp2px(14).toFloat()
-                canvas.drawText(mappingData[it].toString(), (it + 1) * segWidth.toFloat(), -1 * mappingData[it] * segHeight.toFloat() - dp2px(13), textPaint)
+                canvas.drawText(originalData[it].toString(), (it + 1) * segWidth.toFloat(), -1 * mappingData[it] * segHeight.toFloat() - dp2px(13), textPaint)
             }
         }
     }
@@ -208,22 +208,12 @@ class GpAGraph : View {
     override fun onTouchEvent(event: MotionEvent?): Boolean {
 
         val event = event ?: return true
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
-                touchPoint = (event.x / segWidth - 0.5).toInt()
-                postInvalidate()
-                return true
-            }
-            MotionEvent.ACTION_MOVE -> {
-                touchPoint = (event.x / segWidth - 0.5).toInt()
-                postInvalidate()
-                return true
-            }
-            MotionEvent.ACTION_UP -> {
-                touchPoint = (event.x / segWidth - 0.5).toInt()
-                postInvalidate()
-                return true
-            }
+        val newPoint = (event.x / segWidth - 0.5).toInt()
+        if (touchPoint != null && touchPoint == newPoint) {
+            return true
+        } else {
+            touchPoint = (event.x / segWidth - 0.5).toInt()
+            postInvalidate()
         }
         return true
     }
@@ -269,7 +259,6 @@ class GpAGraph : View {
         mLastY = y
         return super.dispatchTouchEvent(event)
     }
-
 
 
     class DefaultMappingRule : GraphRule() {
