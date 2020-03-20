@@ -6,7 +6,6 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.rg.rgview.widget.dp2px
 import org.jetbrains.anko.backgroundColor
 import kotlin.math.abs
@@ -232,18 +231,12 @@ class GpAGraph : View {
     /**
      * 以下是配合BottomSheet的事件分发部分
      */
-    private var coordinator: CoordinatorLayout? = null
-
-    fun bindCoordinator(view: CoordinatorLayout) {
-        coordinator = view
-    }
-
     private var childNeed = false
     private var mLastX: Float? = null
     private var mLastY: Float? = null
 
     override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
-        val coordinatorLayout = coordinator ?: return super.dispatchTouchEvent(event)
+        val parent = parent ?: return super.dispatchTouchEvent(event)
         val event = event ?: return super.dispatchTouchEvent(event)
 
         val x = event.x
@@ -257,9 +250,9 @@ class GpAGraph : View {
                         val deltaX = x - lastX
                         val deltaY = y - lastY
                         if (abs(deltaY) - abs(deltaX) > 0.000001F && !childNeed) {
-                            coordinatorLayout.requestDisallowInterceptTouchEvent(false)
+                            parent.requestDisallowInterceptTouchEvent(false)
                         } else if (abs(deltaY) - abs(deltaX) <= 0.000001F) {
-                            coordinatorLayout.requestDisallowInterceptTouchEvent(true)
+                            parent.requestDisallowInterceptTouchEvent(true)
                             childNeed = true
                         }
                     }

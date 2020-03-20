@@ -12,7 +12,6 @@ class GPAGraphActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gpagraph)
         gpa_graph.setData(arrayListOf(4.0F, 3.5F, 3F, 2.5F, 2F, 1.8F, 1.5F, 1.2F))
-        gpa_graph.bindCoordinator(coordinator)
 
     }
 }
