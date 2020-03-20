@@ -7,7 +7,7 @@
     android:background="@color/design_default_color_primary_dark"
     tools:context=".selfView.gpa.GPAGraphActivity">
 
-    <com.rg.rgview.selfView.gpa.GPAgraph
+    <com.rg.rgview.selfView.gpa.GpAGraph
         android:id="@+id/gpa_graph"
         android:layout_width="match_parent"
         android:layout_height="300dp"
