@@ -2,16 +2,29 @@
 
 ## 1.鲸云特效
 
+<img src="https://raw.githubusercontent.com/roger1245/ImgBed/master/img/1.gif" style="zoom:50%;" />
+
 [具体参考这篇博客](https://juejin.im/post/5d033e46e51d4550723b13e6) 
 
-
 ## 2.果冻特效
-[具体参考这篇博客](https://juejin.im/post/5d0c8c46f265da1ba84a9857) 
 
+<img src="https://raw.githubusercontent.com/roger1245/ImgBed/master/img/2.gif" style="zoom:50%;" />
+
+[具体参考这篇博客](https://juejin.im/post/5d0c8c46f265da1ba84a9857) 
 
 ## 3.气泡
 
+<img src="https://raw.githubusercontent.com/roger1245/ImgBed/master/img/bubble.gif" style="zoom:50%;" />
+
 [具体参考这篇博客](https://juejin.im/post/5d534f83f265da03925a3c36) 
+
+## 4.GPA图表
+
+<img src="https://raw.githubusercontent.com/roger1245/ImgBed/master/img/3-25-(1).gif" style="zoom:50%;" />
+
+
+
+地址：[Github](https://github.com/roger1245/RgView/blob/master/app/src/main/java/com/rg/rgview/selfView/gpa/GPAGraph.kt)
 
 # Material Design交互
 
@@ -22,4 +35,4 @@
 
 ## 2.ItemTouchHelper打造可拖拽的卡片布局
 
-[博客地址](https://roger1245.github.io/2019/11/06/ItemTouchHelper%E6%89%93%E9%80%A0%E5%8F%AF%E6%8B%96%E6%8B%BD%E7%9A%84%E5%8D%A1%E7%89%87%E5%B8%83%E5%B1%80/)
+[博客地址](

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- ActionMenu Property -->
     <declare-styleable name="ActionMenu">
@@ -7,15 +7,25 @@
         <attr name="dimens" format="dimension" />
         <attr name="animationDuration" format="integer" />
         <attr name="actionMenuIcon" format="reference" />
-        <attr name="expandDirect"/>
+        <attr name="expandDirect" />
     </declare-styleable>
 
     <!-- direct enum -->
     <attr name="expandDirect">
-        <enum name="expandDirectTop" value="0"/>
-        <enum name="expandDirectDown" value="1"/>
-        <enum name="expandDirectLeft" value="2"/>
-        <enum name="expandDirectRight" value="3"/>
+        <enum name="expandDirectTop" value="0" />
+        <enum name="expandDirectDown" value="1" />
+        <enum name="expandDirectLeft" value="2" />
+        <enum name="expandDirectRight" value="3" />
     </attr>
 
+    <!--GPAGraph-->
+    <declare-styleable name="GpAGraph" tools:ignore="ResourceName">
+        <attr name="gpa_line_color" format="color" />
+        <attr name="gpa_dash_color" format="color" />
+        <attr name="gpa_text_color" format="color" />
+        <attr name="gpa_text_size" format="dimension" />
+        <attr name="gpa_circle_inside_color" format="color" />
+        <attr name="gpa_gradient_bottom_color" format="color" />
+        <attr name="gpa_gradient_top_color" format="color" />
+    </declare-styleable>
 </resources>
