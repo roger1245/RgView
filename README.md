@@ -35,4 +35,6 @@
 
 ## 2.ItemTouchHelper打造可拖拽的卡片布局
 
-[博客地址](
+## 3.EdgeEffect效果
+
+[博客地址](https://roger1245.github.io/2020/04/14/%E4%BB%BFQQ%E7%9A%84recyclerview%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/)
