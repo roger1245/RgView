@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.rg.rgview.edgeEffect.EdgeEffectActivity
 import com.rg.rgview.fab.FabTransformationActivity
 import com.rg.rgview.reoder.ReorderActivity
 import com.rg.rgview.selfView.SelfViewActivity
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.reorder -> {
                 val intent = Intent(this@MainActivity, ReorderActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.edge_effect -> {
+                val intent = Intent(this@MainActivity, EdgeEffectActivity::class.java)
                 startActivity(intent)
             }
         }

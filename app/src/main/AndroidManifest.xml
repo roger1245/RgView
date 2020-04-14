@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".selfView.gpa.GPAGraphActivity"></activity>
+        <activity android:name=".edgeEffect.EdgeEffectActivity"></activity>
+        <activity android:name=".selfView.gpa.GPAGraphActivity" />
         <activity android:name=".selfView.bezierCircle.BezierCircleActivity" />
         <activity android:name=".roundRectCornerView.RoundRectCornerActivity" />
         <activity android:name=".reoder.ReorderActivity" />
